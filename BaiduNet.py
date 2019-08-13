@@ -47,7 +47,6 @@ class BaiduNet(nn.Module):
         out = self.layer2(out)
         out = self.layer3(out)
         out = F.max_pool2d(out, 8)
-        out = F.avg_pool2d(out, 8)
         out = out.view(out.size(0), -1)
         out = self.fc(out)
         return out
